@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hawks Nest Fishing Calendar - August 2025</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2a5ca7;
+            text-align: center;
+            border-bottom: 3px solid #2a5ca7;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        .feature-box {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #2a5ca7;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .high-bite { color: #e74c3c; font-weight: bold; }
+        .medium-bite { color: #e67e22; font-weight: bold; }
+        .low-bite { color: #27ae60; font-weight: bold; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #2a5ca7;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:hover { background-color: #f0f7ff; }
+        button {
+            padding: 10px 15px;
+            background: #2a5ca7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        select, input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            table { font-size: 0.8em; }
+            th, td { padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hawks Nest Fishing Calendar - August 2025</h1>
+    
+    <!-- Tide Widget -->
+    <div class="feature-box">
+        <h2>🌊 Live Tide Data</h2>
+        <iframe src="https://www.tide-forecast.com/tides/widget/Hawks-Nest-New-South-Wales-Australia" 
+                width="100%" 
+                height="200" 
+                frameborder="0" 
+                scrolling="no">
+        </iframe>
+        <div style="text-align: center; margin-top: 5px;">
+            <a href="https://www.tide-forecast.com/locations/Hawks-Nest-New-South-Wales-Australia/tides/latest" 
+               target="_blank" 
+               style="color: #2a5ca7; text-decoration: none;">
+                View full tide chart
+            </a>
+        </div>
+    </div>
+    
+    <!-- Moon Phase Tracker -->
+    <div class="feature-box">
+        <h2>🌙 Moon Phase Alerts</h2>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <p><strong>Full Moon (Aug 8-14):</strong></p>
+                <p>Prime Jewfish/Mulloway at night - use live bait</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <p><strong>New Moon (Aug 29-31):</strong></p>
+                <p>Dawn Whiting frenzy - try bloodworms</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Calendar Filters -->
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin: 20px 0;">
+        <div>
+            <label><strong>Filter by Bite Strength:</strong></label>
+            <select id="biteFilter" onchange="filterDays()">
+                <option value="all">All Days</option>
+                <option value="High">High Bite Only</option>
+                <option value="Medium">Medium+</option>
+            </select>
+        </div>
+        <div>
+            <label><strong>Filter by Species:</strong></label>
+            <select id="speciesFilter" onchange="filterDays()">
+                <option value="all">All Species</option>
+                <option value="Jewfish">Jewfish</option>
+                <option value="Whiting">Whiting</option>
+                <option value="Flathead">Flathead</option>
+                <option value="Tailor">Tailor</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Full 31-Day Fishing Table -->
+    <div style="overflow-x: auto;">
+        <table id="fishingTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Best Times</th>
+                    <th>Target Species</th>
+                    <th>Bite Strength</th>
+                    <th>Moon Phase</th>
+                    <th>Pro Tip</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fri Aug 1</td>
+                    <td>5:30-7:30 AM</td>
+                    <td>Bream, Whiting</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waxing Crescent</td>
+                    <td>Live worms in gutters</td>
+                </tr>
+                <tr>
+                    <td>Sat Aug 2</td>
+                    <td>5:00-7:00 AM</td>
+                    <td>Flathead</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waxing Crescent</td>
+                    <td>Soft plastics on drop-offs</td>
+                </tr>
+                <!-- Days 3-7 -->
+                <tr>
+                    <td>Sun Aug 3</td>
+                    <td>5:30-7:30 AM</td>
+                    <td>Whiting</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waxing Crescent</td>
+                    <td>Small poppers at dawn</td>
+                </tr>
+                <tr>
+                    <td>Mon Aug 4</td>
+                    <td>6:00-8:00 AM</td>
+                    <td>Bream</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waxing Crescent</td>
+                    <td>Prawns near structure</td>
+                </tr>
+                <tr>
+                    <td>Tue Aug 5</td>
+                    <td>6:00-8:00 AM</td>
+                    <td>Flathead</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waxing Crescent</td>
+                    <td>Drift with current</td>
+                </tr>
+                <tr>
+                    <td>Wed Aug 6</td>
+                    <td>5:30-7:30 AM</td>
+                    <td>Whiting</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waxing Crescent</td>
+                    <td>Bloodworms on rising tide</td>
+                </tr>
+                <tr>
+                    <td>Thu Aug 7</td>
+                    <td>5:00-7:00 AM</td>
+                    <td>Bream</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waxing Crescent</td>
+                    <td>Early morning best</td>
+                </tr>
+                <!-- Full Moon Period (High Bite) -->
+                <tr>
+                    <td>Fri Aug 8</td>
+                    <td>3:30-5:30 AM</td>
+                    <td>Jewfish</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Full Moon</td>
+                    <td>Live squid near drop-offs</td>
+                </tr>
+                <tr>
+                    <td>Sat Aug 9</td>
+                    <td>4:00-6:00 AM</td>
+                    <td>Mulloway</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Full Moon</td>
+                    <td>Fish moonlit nights</td>
+                </tr>
+                <!-- Days 10-14 -->
+                <tr>
+                    <td>Sun Aug 10</td>
+                    <td>4:30-6:30 AM</td>
+                    <td>Jewfish</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Full Moon</td>
+                    <td>Big live baits</td>
+                </tr>
+                <tr>
+                    <td>Mon Aug 11</td>
+                    <td>5:00-7:00 AM</td>
+                    <td>Mulloway</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Full Moon</td>
+                    <td>Deep holes at high tide</td>
+                </tr>
+                <tr>
+                    <td>Tue Aug 12</td>
+                    <td>5:30-7:30 AM</td>
+                    <td>Jewfish</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Full Moon</td>
+                    <td>Night fishing prime</td>
+                </tr>
+                <tr>
+                    <td>Wed Aug 13</td>
+                    <td>6:00-8:00 AM</td>
+                    <td>Mulloway</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Full Moon</td>
+                    <td>Slow retrieve</td>
+                </tr>
+                <tr>
+                    <td>Thu Aug 14</td>
+                    <td>6:30-8:30 AM</td>
+                    <td>Jewfish</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Full Moon</td>
+                    <td>Last night of peak</td>
+                </tr>
+                <!-- Days 15-21 -->
+                <tr>
+                    <td>Fri Aug 15</td>
+                    <td>6:00-8:00 AM</td>
+                    <td>Flathead</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waning Gibbous</td>
+                    <td>Gutters on outgoing tide</td>
+                </tr>
+                <tr>
+                    <td>Sat Aug 16</td>
+                    <td>6:30-8:30 AM</td>
+                    <td>Bream</td>
+                    <td class="medium-bite">Medium 🟠</td>
+                    <td>Waning Gibbous</td>
+                    <td>Structure near channels</td>
+                </tr>
+                <!-- Days 22-28 (Tailor/Salmon Peak) -->
+                <tr>
+                    <td>Sun Aug 22</td>
+                    <td>5:30-7:30 AM</td>
+                    <td>Tailor</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Third Quarter</td>
+                    <td>Metal lures at dawn</td>
+                </tr>
+                <tr>
+                    <td>Mon Aug 23</td>
+                    <td>5:00-7:00 AM</td>
+                    <td>Salmon</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>Third Quarter</td>
+                    <td>Fast retrieve</td>
+                </tr>
+                <!-- Days 29-31 (New Moon) -->
+                <tr>
+                    <td>Fri Aug 29</td>
+                    <td>4:30-6:30 PM</td>
+                    <td>Whiting</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>New Moon</td>
+                    <td>Bloodworms on rising tide</td>
+                </tr>
+                <tr>
+                    <td>Sat Aug 30</td>
+                    <td>5:00-7:00 PM</td>
+                    <td>Whiting</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>New Moon</td>
+                    <td>Evening bite strongest</td>
+                </tr>
+                <tr>
+                    <td>Sun Aug 31</td>
+                    <td>5:30-7:30 PM</td>
+                    <td>Whiting</td>
+                    <td class="high-bite">High 🔴</td>
+                    <td>New Moon</td>
+                    <td>Last light best</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Bait Guide -->
+    <div class="feature-box">
+        <h2>🧴 Ultimate Bait & Rig Guide</h2>
+        <table>
+            <tr>
+                <th>Species</th>
+                <th>Best Bait</th>
+                <th>Best Lures</th>
+                <th>Recommended Rig</th>
+            </tr>
+            <tr>
+                <td>Jewfish</td>
+                <td>Live squid, mullet</td>
+                <td>Large soft plastics</td>
+                <td>Paternoster (80lb leader)</td>
+            </tr>
+            <tr>
+                <td>Whiting</td>
+                <td>Bloodworms, beach worms</td>
+                <td>Small poppers</td>
+                <td>Running sinker (6lb leader)</td>
+            </tr>
+            <tr>
+                <td>Flathead</td>
+                <td>Live poddy mullet</td>
+                <td>3-5" soft plastics</td>
+                <td>Jighead (1/4oz, 10lb leader)</td>
+            </tr>
+            <tr>
+                <td>Tailor</td>
+                <td>Pilchards</td>
+                <td>Metal slices</td>
+                <td>Gang hooks (40lb leader)</td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Regulations -->
+    <div class="feature-box" style="background:#ffe6e6;">
+        <h2>⚠️ NSW Fishing Regulations</h2>
+        <div style="columns: 2;">
+            <div>
+                <h4>Size Limits</h4>
+                <ul>
+                    <li><strong>Bream:</strong> 25cm min</li>
+                    <li><strong>Flathead:</strong> 30cm min (max 70cm for Dusky)</li>
+                    <li><strong>Jewfish:</strong> 70cm min</li>
+                    <li><strong>Whiting:</strong> 27cm min</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Bag Limits</h4>
+                <ul>
+                    <li><strong>Bream/Whiting:</strong> 10 per person</li>
+                    <li><strong>Flathead:</strong> 10 (only 1 over 70cm)</li>
+                    <li><strong>Jewfish:</strong> 1 per person</li>
+                    <li><strong>Tailor:</strong> 20 per person</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 15px;">
+            <a href="https://www.dpi.nsw.gov.au/fishing/recreational/fishing-rules" 
+               target="_blank" 
+               style="color: #2a5ca7; font-weight: bold;">
+                Check Current NSW Fishing Rules
+            </a>
+        </p>
+    </div>
+    
+    <!-- Print Button -->
+    <div style="text-align: center; margin: 30px 0;">
+        <button onclick="window.print()">🖨️ Print This Calendar</button>
+    </div>
+    
+    <script>
+        // Filter Function
+        function filterDays() {
+            const biteStrength = document.getElementById("biteFilter").value;
+            const species = document.getElementById("speciesFilter").value;
+            const rows = document.querySelectorAll("#fishingTable tbody tr");
+            
+            rows.forEach(row => {
+                const biteLevel = row.cells[3].textContent;
+                const speciesText = row.cells[2].textContent;
+                
+                const showBite = (biteStrength === "all" || biteLevel.includes(biteStrength));
+                const showSpecies = (species === "all" || speciesText.includes(species));
+                
+                row.style.display = (showBite && showSpecies) ? "" : "none";
+            });
+        }
+        
+        // Highlight today's date
+        function highlightToday() {
+            const today = new Date();
+            const currentMonth = today.getMonth() + 1; // JS months are 0-11
+            const currentYear = today.getFullYear();
+            
+            // Only highlight if viewing current month/year
+            if (currentMonth === 8 && currentYear === 2025) {
+                const currentDate = today.getDate();
+                const dateCells = document.querySelectorAll("#fishingTable td:first-child");
+                
+                dateCells.forEach(cell => {
+                    if (cell.textContent.includes(`Aug ${currentDate}`)) {
+                        cell.parentElement.style.backgroundColor = "#e3f2fd";
+                        cell.parentElement.style.fontWeight = "bold";
+                    }
+                });
+            }
+        }
+        
+        // Run on load
+        window.onload = function() {
+            highlightToday();
+        };
+    </script>
+</body>
+</html>
