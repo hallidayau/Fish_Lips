@@ -65,9 +65,34 @@
             border: 1px solid #ddd;
             margin: 5px 0;
         }
+        .data-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .data-link {
+            display: block;
+            background: #2a5ca7;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+            font-weight: bold;
+        }
+        .data-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .data-link.weather {
+            background: #4CAF50;
+        }
         @media (max-width: 768px) {
             table { font-size: 0.8em; }
             th, td { padding: 8px 6px; }
+            .data-links { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -75,14 +100,27 @@
 
     <h1>Hawks Nest Fishing Calendar - August 2025</h1>
     
-    <!-- Tide Widget -->
+    <!-- Forecast & External Links -->
     <div class="feature-box">
-    <h2>🌊 Live Tide Data</h2>
-    <a href="https://tides.willyweather.com.au/nsw/mid-north-coast/hawks-nest.html" 
-       target="_blank"
-       style="display: block; background: #2a5ca7; color: white; padding: 12px; border-radius: 8px; text-align: center; text-decoration: none;">
-       Check Hawks Nest Tides (WillyWeather) →
-    </a>
+        <h2>📅 August Fishing Forecast</h2>
+        <p><strong>Best Fishing Days:</strong> 8th-14th (Full Moon), 22nd-28th, 29th-31st (New Moon)</p>
+        <p><strong>Top Targets:</strong> Jewfish (nights), Whiting (dawns), Tailor (dusk)</p>
+
+        <div class="data-links">
+            <a href="https://tides.willyweather.com.au/nsw/mid-north-coast/hawks-nest.html" 
+               class="data-link" 
+               target="_blank">
+               🌊 Live Tide Data
+            </a>
+            <a href="https://www.weather.com/en-AU/weather/tenday/l/Hawks+Nest+NSW" 
+               class="data-link weather" 
+               target="_blank">
+               ⛅ 10-Day Forecast
+            </a>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 0.9em; color: #666;">
+            Always verify conditions before fishing
+        </p>
     </div>
     
     <!-- Moon Phase Tracker -->
@@ -152,7 +190,6 @@
                     <td>Waxing Crescent</td>
                     <td>Soft plastics on drop-offs</td>
                 </tr>
-                <!-- Days 3-7 -->
                 <tr>
                     <td>Sun Aug 3</td>
                     <td>5:30-7:30 AM</td>
@@ -193,7 +230,6 @@
                     <td>Waxing Crescent</td>
                     <td>Early morning best</td>
                 </tr>
-                <!-- Full Moon Period (High Bite) -->
                 <tr>
                     <td>Fri Aug 8</td>
                     <td>3:30-5:30 AM</td>
@@ -210,7 +246,6 @@
                     <td>Full Moon</td>
                     <td>Fish moonlit nights</td>
                 </tr>
-                <!-- Days 10-14 -->
                 <tr>
                     <td>Sun Aug 10</td>
                     <td>4:30-6:30 AM</td>
@@ -251,7 +286,6 @@
                     <td>Full Moon</td>
                     <td>Last night of peak</td>
                 </tr>
-                <!-- Days 15-21 -->
                 <tr>
                     <td>Fri Aug 15</td>
                     <td>6:00-8:00 AM</td>
@@ -268,7 +302,6 @@
                     <td>Waning Gibbous</td>
                     <td>Structure near channels</td>
                 </tr>
-                <!-- Days 22-28 (Tailor/Salmon Peak) -->
                 <tr>
                     <td>Sun Aug 22</td>
                     <td>5:30-7:30 AM</td>
@@ -285,7 +318,6 @@
                     <td>Third Quarter</td>
                     <td>Fast retrieve</td>
                 </tr>
-                <!-- Days 29-31 (New Moon) -->
                 <tr>
                     <td>Fri Aug 29</td>
                     <td>4:30-6:30 PM</td>
